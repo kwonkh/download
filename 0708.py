@@ -49,5 +49,7 @@ def my_sa(l, sa, a=2):
         return sm
     elif (sa == 2):
         return round(sm/cn, a)
+    elif (sa == 3):
+        print('합계 =',sm,', 평균 = ',round(sm/cn,a))
     else:
-        print('두 번째 변수값 오류입니다. (합계 구하기 : 1, 평균 구하기 : 2)')
+        print('두 번째 변수값 오류입니다. (합계 구하기 : 1, 평균 구하기 : 2, 둘다 구하기 : 3)')
