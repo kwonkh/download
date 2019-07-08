@@ -104,7 +104,7 @@ def my_xn(setnum, xn, th=1):
                 if (al[i][0] > al[j][0]):
                     al[i][1] += 1
     else:
-        print('오류입니다. 두 번째 변수에서 큰 수이면 max, 작은 수는 min을 입력하세요.')
+        print('오류입니다. 구하려고 하는 것이 큰 순서이면 max, 작은 순서이면 min을 두번 째 변수에 입력하세요.')
     for i in (range(cn)):
         if (al[i][1] == th):
             return al[i][0]
