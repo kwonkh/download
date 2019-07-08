@@ -30,6 +30,7 @@ def my_max(setnum):
     for i in (range(cn)):
         if (al[i][1] == 1):
             return al[i][0]
+            break
 
 def my_max2(l):
     mx = l[0]
@@ -55,6 +56,7 @@ def my_min(setnum):
     for i in (range(cn)):
         if (al[i][1] == cn):
             return al[i][0]
+            break
 
 def my_min2(l):
     mn = l[0]
