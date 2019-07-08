@@ -2,12 +2,18 @@
 
 #1
 
-def my_max(setnum):
-    l = list(set(setnum))
-    #숫자들의 모임 setnum을 입력 받아 집합으로 변환하여 중복값 제거 후 다시 리스트로 변환
+def length(a):
+    a = list(set(a))
     cn = 0
-    for i in l:
-        cn += 1 #리스트 l의 길이 구하기
+    for i in a:
+        cn += 1
+    return cn
+
+def my_max(setnum, th=1):
+    l = list(set(setnum))
+    cn = 0
+    for i in a:
+        cn += 1
     al = list(range(cn))
     for i in (range(cn)):
         al[i] = [l[i], 1]
@@ -16,7 +22,7 @@ def my_max(setnum):
             if (al[i][0] < al[j][0]):
                 al[i][1] += 1
     for i in (range(cn)):
-        if (al[i][1] == 1):
+        if (al[i][1] == th):
             return al[i][0]
             break
 
@@ -29,7 +35,7 @@ def my_max2(l):
 
 #2
 
-def my_min(setnum):
+def my_min(setnum, th=1):
     l = list(set(setnum))
     cn = 0
     for i in l:
@@ -39,10 +45,10 @@ def my_min(setnum):
         al[i] = [l[i], 1]
     for i in (range(cn)):
         for j in (range(cn)):
-            if (al[i][0] < al[j][0]):
+            if (al[i][0] > al[j][0]):
                 al[i][1] += 1
     for i in (range(cn)):
-        if (al[i][1] == cn):
+        if (al[i][1] == th):
             return al[i][0]
             break
 
@@ -74,3 +80,32 @@ def len(l):
     for i in l:
         cn += 1
     return cn
+
+#1,2
+
+def my_xn(setnum, xn, th=1):
+    l = list(set(setnum))
+    cn = 0
+    for i in l:
+        cn += 1
+    if (th > cn):
+        print('오류입니다. 입력하신 리스트 길이보다 작은 수를 세 번째 변수에 입력하세요.')
+    al = list(range(cn))
+    for i in (range(cn)):
+        al[i] = [l[i], 1]
+    if (xn == 'max'):
+        for i in (range(cn)):
+            for j in (range(cn)):
+                if (al[i][0] < al[j][0]):
+                    al[i][1] += 1
+    elif (xn == 'min'):
+        for i in (range(cn)):
+            for j in (range(cn)):
+                if (al[i][0] > al[j][0]):
+                    al[i][1] += 1
+    else:
+        print('오류입니다. 두 번째 변수에서 큰 수이면 max, 작은 수는 min을 입력하세요.')
+    for i in (range(cn)):
+        if (al[i][1] == th):
+            return al[i][0]
+            break
