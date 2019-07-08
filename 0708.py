@@ -75,13 +75,13 @@ def my_avg(l):
         sm += l[i]
     return round(sm/len(l),2)
 
+#1,2
+
 def len(l):
     cn = 0
     for i in l:
         cn += 1
     return cn
-
-#1,2
 
 def my_xn(setnum, xn, th=1):
     l = list(set(setnum))
@@ -89,7 +89,7 @@ def my_xn(setnum, xn, th=1):
     for i in l:
         cn += 1
     if (th > cn):
-        print('오류입니다. 입력하신 리스트 길이보다 작은 수를 세 번째 변수에 입력하세요.')
+        print('오류입니다. 입력하신 리스트 길이보다 작거나 같은 수를 세 번째 변수에 입력하세요.')
     al = list(range(cn))
     for i in (range(cn)):
         al[i] = [l[i], 1]
