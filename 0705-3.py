@@ -14,17 +14,21 @@ def my_split(str,ch):
 
 #1
 
-def my_max(l,a):
-    l = list(set(l))
-    al = list(range(len(l)))
-    for i in (range(len(l))):
+def my_max(setnum):
+    l = list(set(setnum))
+    #숫자들의 모임 setnum을 입력 받아 집합으로 변환하여 중복값 제거 후 다시 리스트로 변환
+    cn = 0
+    for i in l:
+        cn += 1 #리스트 l의 길이 구하기
+    al = list(range(cn))
+    for i in (range(cn)):
         al[i] = [l[i], 1]
-    for i in (range(len(l))):
-        for j in (range(len(l))):
+    for i in (range(cn)):
+        for j in (range(cn)):
             if (al[i][0] < al[j][0]):
                 al[i][1] += 1
-    for i in (range(len(l))):
-        if (al[i][1] == a):
+    for i in (range(cn)):
+        if (al[i][1] == 1):
             return al[i][0]
 
 def my_max2(l):
@@ -36,17 +40,20 @@ def my_max2(l):
 
 #2
 
-def my_min(l):
-    l = list(set(l))
-    al = list(range(len(l)))
-    for i in (range(len(l))):
+def my_min(setnum):
+    l = list(set(setnum))
+    cn = 0
+    for i in l:
+        cn += 1
+    al = list(range(cn))
+    for i in (range(cn)):
         al[i] = [l[i], 1]
-    for i in (range(len(l))):
-        for j in (range(len(l))):
+    for i in (range(cn)):
+        for j in (range(cn)):
             if (al[i][0] < al[j][0]):
                 al[i][1] += 1
-    for i in (range(len(l))):
-        if (al[i][1] == len(l)):
+    for i in (range(cn)):
+        if (al[i][1] == cn):
             return al[i][0]
 
 def my_min2(l):
@@ -71,3 +78,9 @@ def my_avg(l):
     for i in range(len(l)):
         sm += l[i]
     return round(sm/len(l),2)
+
+def len(l):
+    cn = 0
+    for i in l:
+        cn += 1
+    return cn
